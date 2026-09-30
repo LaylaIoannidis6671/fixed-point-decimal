@@ -34,3 +34,10 @@ Constructor: `FixedPoint(value, *, places)` where `value` is an `int`, a `str` (
 Methods: `to_str()`, `to_int()` (truncates toward zero), `to_float()` (lossy), `divmod(other, *, places=None)` returning `(quotient, remainder)`.
 
 Operators: `+ - * / //` between two `FixedPoint` values; unary `-` and `abs()`; all six comparisons (`== < <= > >=`), value-only, so `1.50` at places=2 equals `1.500` at places=3.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
