@@ -1,6 +1,6 @@
 [project]
 name = "fixed-point-decimal"
-version = "0.1.3"
+version = "0.1.4"
 description = "Decimal arithmetic with a fixed number of digits after the decimal point using plain integers, avoiding the standard library Decimal's overhead."
 requires-python = ">=3.10"
 dependencies = []
